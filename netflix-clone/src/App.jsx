@@ -1,18 +1,21 @@
-import { useState } from 'react'
-import './App.css'
-import Row from './Row.jsx';
+import { useState } from "react";
+import "./App.css";
+import Row from "./Row.jsx";
+import requests from "./requests.js";
+import Banner from "./Banner.jsx";
+import Nav from './Nav.jsx';
 
 function App() {
-
-  const [ movies, setMovies ] = useState([]);
-
   return (
-    <>
-      <h1>Let's build netflix frontend</h1>
-      <Row title={"Trending"}/>
-      <Row title={"Top rated"}/>
-    </>
-  )
+    <div className="app">
+      <Nav />
+      <Banner />
+      <Row title={"Trending"} fetchUrl={requests.fetchTrending} isLargeRow />
+      <Row title={"Top rated"} fetchUrl={requests.fetchTopRated} />
+      <Row title={"Popular"} fetchUrl={requests.fetchPopular} />
+      
+    </div>
+  );
 }
 
-export default App
+export default App;
