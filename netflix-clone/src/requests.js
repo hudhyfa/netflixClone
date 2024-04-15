@@ -1,11 +1,9 @@
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 const requests = {
-    fetchTopRated: `/movie/top_rated`,
-    fetchNowPlaying: `/movie/now_playing`,
-    fetchPopular: `/movie/popular`,
-    fetchUpcoming: `/movie/upcoming`,
-    fetchTrending: `/trending/all/day?language=en-US`,
-    fetchUpcoming: `/movie/upcoming`,
-}
+  fetchTopRated: `tv/top_rated?language=en-US&page=1&api_key=${API_KEY}`,
+  fetchTrending: `trending/all/day?language=en-US&api_key=${API_KEY}`,
+  fetchPopular: `movie/popular?language=en-US&page=1&api_key=${API_KEY}`
+};
 
 export default requests;

@@ -1,25 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "./axios";
-import requests from "./requests";
 import './Banner.css';
 
 function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
 }
 
-function Banner() {
+function Banner({ fetchUrl }) {
   const [movie, setMovie] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const request = await axios.get(requests.fetchNowPlaying, {
-          headers: {
-            accept: "application/json",
-            Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZmZkODAwNDVkZTM1NDM3NWE0YmExZTY1MTgyOWQ1MSIsInN1YiI6IjY2MWI2Y2QzZGJhZDUwMDE2MjQzMWZiMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.xfkgwhPkTnTzcIZvkSqn3nWsZPLjzIKTDrQ0JzSxrs8",
-          },
-        });
+        const request = await axios.get(fetchUrl);
         setMovie(
           request.data.results[
             Math.floor(Math.random() * request.data.results.length - 1)
