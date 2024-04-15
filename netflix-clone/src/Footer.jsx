@@ -1,10 +1,5 @@
 import "./Footer.css";
-<script
-  defer
-  src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
-  integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
-  crossorigin="anonymous"
-></script>;
+// import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css";
 function Footer() {
   return (
     <div>
@@ -65,8 +60,8 @@ function Footer() {
         </div>
       </section>
       <footer>
-        <p>&copy 1997-2018 Netflix, Inc.</p>
-        <p>Carlos Avila &copy 2018</p>
+        <p>&copy; 1997-2018 Netflix, Inc.</p>
+        <p>Muhammad Hudhaifa &copy; 2024</p>
       </footer>
     </div>
   );

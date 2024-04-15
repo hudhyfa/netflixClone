@@ -4,6 +4,11 @@
 /* LINKS */
 .link {
     padding: 50px;
+    width: 100%;
+  }
+
+  .sub-links {
+    width: 80%;
     margin: auto;
   }
   
